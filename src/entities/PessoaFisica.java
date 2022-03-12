@@ -88,6 +88,7 @@ public abstract class PessoaFisica {
 
 	@Override
 	public String toString() {
-		return "PessoaFisica [nome=" + nome + ", cpf=" + cpf + ", dataNascimento=" + dataNascimento + "]";
+		return "Nome: " + nome + ", Cpf: " + cpf + ", Data de Nascimento: " + dataNascimento + ", Logradouro: "
+				+ logradouro + ", Número: " + numero + ", Complemento: " + complemento + ", Cep: " + cep;
 	}
 }
