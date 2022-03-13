@@ -65,6 +65,7 @@ public class Disciplina {
 	
 	public void cadastrarDisciplina() {
 		
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		Disciplina disciplina = new Disciplina();
 		
@@ -82,9 +83,6 @@ public class Disciplina {
 		}
 		catch (InputMismatchException e) {
 			System.out.println("Você entrou com um valor inválido. Por favor, reinicie o programa e tente novamente.");
-		}
-		finally {
-			sc.close();
 		}
 		
 		@SuppressWarnings("unused")

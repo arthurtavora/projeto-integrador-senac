@@ -81,6 +81,7 @@ public class Turma {
 	
 	public void cadastrarTurma() {
 		
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		Turma turma = new Turma();
 		
@@ -99,9 +100,6 @@ public class Turma {
 		}
 		catch (InputMismatchException e) {
 			System.out.println("Você entrou com um valor inválido. Por favor, reinicie o programa e tente novamente.");
-		}
-		finally {
-			sc.close();
 		}
 		
 		@SuppressWarnings("unused")

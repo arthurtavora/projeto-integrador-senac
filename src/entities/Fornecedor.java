@@ -52,6 +52,7 @@ public class Fornecedor extends PessoaJuridica {
 	@Override
 	public void cadastrarPessoaJuridica() {
 		
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		Fornecedor fornecedor = new Fornecedor();
 		
@@ -88,9 +89,6 @@ public class Fornecedor extends PessoaJuridica {
 		}
 		catch (InputMismatchException e) {
 			System.out.println("Você entrou com um valor inválido. Por favor, reinicie o programa e tente novamente.");
-		}
-		finally {
-			sc.close();
 		}
 		
 		@SuppressWarnings("unused")

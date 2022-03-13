@@ -74,6 +74,7 @@ public class Contrato {
 	
 	public void registrarContrato() {
 		
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		Contrato contrato = new Contrato();
 		TipoContrato tipo;
@@ -106,9 +107,6 @@ public class Contrato {
 		}
 		catch (InputMismatchException e) {
 			System.out.println("Você entrou com um valor inválido. Por favor, reinicie o programa e tente novamente.");
-		}
-		finally {
-			sc.close();
 		}
 		
 		@SuppressWarnings("unused")

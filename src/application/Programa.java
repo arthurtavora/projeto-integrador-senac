@@ -16,7 +16,7 @@ public class Programa {
 		
 		Scanner sc = new Scanner(System.in);
 		int respostaUsuario;
-		char respostaUsuario2;
+		char respostaUsuarioSistema;
 		
 		do {
 			System.out.println("Olá ! Seja bem-vindo(a) ao sistema de cadastro da universidade UNIPISEN.");
@@ -52,7 +52,7 @@ public class Programa {
 			
 			switch (respostaUsuario) {
 			case 0:
-				System.out.println("O sistema foi finalizado. Volte sempre.");
+				System.out.println("O sistema está sendo finalizado. Volte sempre.");
 				break;
 			case 1:
 				Aluno aluno = new Aluno();
@@ -161,11 +161,16 @@ public class Programa {
 				System.out.println("Você digitou um valor inválido.");
 			}
 			System.out.println();
-			System.out.println("Você deseja realizar mais alguma operação? Responda 's' para sim ou 'n' para encerrar o sistema: ");
-			sc.nextLine();
-			respostaUsuario2 = sc.next().charAt(0);
 			
-		} while (respostaUsuario < 0 || respostaUsuario > 21 || respostaUsuario2 == 's');
+			if (respostaUsuario != 0) {
+				System.out.println("Você deseja realizar mais alguma operação? Responda 's' para continuar ou entre com qualquer valor para encerrar o sistema: ");
+				respostaUsuarioSistema = sc.next().charAt(0);
+			}
+			else {
+				respostaUsuarioSistema = 'n';
+			}
+			
+		} while (respostaUsuarioSistema == 's' || respostaUsuarioSistema == 'S');
 		
 		System.out.println("O sistema foi finalizado. Muito obrigado e volte sempre!");
 		

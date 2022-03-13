@@ -67,6 +67,7 @@ public class Curso {
 	
 	public void cadastrarCurso() {
 		
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		Curso curso = new Curso();
 		TipoCurso tipo;
@@ -103,10 +104,7 @@ public class Curso {
 		catch (InputMismatchException e) {
 			System.out.println("Você entrou com um valor inválido. Por favor, reinicie o programa e tente novamente.");
 		}
-		finally {
-			sc.close();
-		}
-		
+
 		@SuppressWarnings("unused")
 		boolean createNewFolder = new File("c:\\arquivos_projetointegrador_senac").mkdir();
 		

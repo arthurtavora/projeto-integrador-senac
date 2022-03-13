@@ -52,6 +52,7 @@ public class Aluno extends PessoaFisica {
 	@Override
 	public void cadastrarPessoaFisica() {
 		
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		Aluno aluno = new Aluno();
 		
@@ -91,9 +92,6 @@ public class Aluno extends PessoaFisica {
 		}
 		catch (InputMismatchException e) {
 			System.out.println("Você entrou com um valor inválido. Por favor, reinicie o programa e tente novamente.");
-		}
-		finally {
-			sc.close();
 		}
 		
 		@SuppressWarnings("unused")

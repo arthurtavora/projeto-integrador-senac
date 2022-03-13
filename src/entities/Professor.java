@@ -67,7 +67,8 @@ public class Professor extends PessoaFisica {
 
 	@Override
 	public void cadastrarPessoaFisica() {
-
+		
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		Professor professor = new Professor();
 
@@ -109,8 +110,6 @@ public class Professor extends PessoaFisica {
 
 		} catch (InputMismatchException e) {
 			System.out.println("Você entrou com um valor inválido. Por favor, reinicie o programa e tente novamente.");
-		} finally {
-			sc.close();
 		}
 
 		@SuppressWarnings("unused")
