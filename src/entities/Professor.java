@@ -175,11 +175,12 @@ public class Professor extends PessoaFisica {
 				if (line.contains(nome)) {
 					System.out.println(line);
 					existeNome = true;
+					break;
 				}
-				else {
-					if (line != null) {
-						line = br.readLine();
-					}
+				line = br.readLine();
+				if (line == null) {
+					System.out.println("O professor pesquisado não foi encontrado em nosso sistema.");
+					existeNome = true;
 				}
 			}
 		}

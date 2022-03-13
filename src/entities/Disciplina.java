@@ -102,11 +102,11 @@ public class Disciplina {
 				System.out.println("Error: " + e.getMessage());
 			} 
 			finally {
-				System.out.println("Aluno cadastrado com sucesso: " + disciplinaCriadaComSucesso);
+				System.out.println("Disciplina cadastrada com sucesso: " + disciplinaCriadaComSucesso);
 			}
 		}
 		else {
-			System.out.println("Aluno cadastrado com sucesso: " + disciplinaCriadaComSucesso);
+			System.out.println("Disciplina cadastrada com sucesso: " + disciplinaCriadaComSucesso);
 		}
 	}
 	
@@ -143,11 +143,12 @@ public class Disciplina {
 				if (line.contains(nome)) {
 					System.out.println(line);
 					existeNome = true;
+					break;
 				}
-				else {
-					if (line != null) {
-						line = br.readLine();
-					}
+				line = br.readLine();
+				if (line == null) {
+					System.out.println("A disciplina pesquisada não foi encontrada em nosso sistema.");
+					existeNome = true;
 				}
 			}
 		}

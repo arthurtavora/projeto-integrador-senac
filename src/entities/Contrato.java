@@ -127,11 +127,11 @@ public class Contrato {
 				System.out.println("Error: " + e.getMessage());
 			} 
 			finally {
-				System.out.println("Aluno cadastrado com sucesso: " + contratoCriadoComSucesso);
+				System.out.println("Contrato cadastrado com sucesso: " + contratoCriadoComSucesso);
 			}
 		}
 		else {
-			System.out.println("Aluno cadastrado com sucesso: " + contratoCriadoComSucesso);
+			System.out.println("Contrato cadastrado com sucesso: " + contratoCriadoComSucesso);
 		}
 	}
 	
@@ -168,11 +168,12 @@ public class Contrato {
 				if (line.contains(String.valueOf(numeroRegistro))) {
 					System.out.println(line);
 					existeNome = true;
+					break;
 				}
-				else {
-					if (line != null) {
-						line = br.readLine();
-					}
+				line = br.readLine();
+				if (line == null) {
+					System.out.println("O contrato pesquisado não foi encontrado em nosso sistema.");
+					existeNome = true;
 				}
 			}
 		}

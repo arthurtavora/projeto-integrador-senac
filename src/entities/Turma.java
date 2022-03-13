@@ -22,7 +22,7 @@ public class Turma {
 	
 	private Curso curso;
 	
-	private Set<Aluno> turmas = new HashSet<>();
+	private Set<Aluno> alunos = new HashSet<>();
 	
 	public Turma() {
 	}
@@ -76,7 +76,7 @@ public class Turma {
 	}
 
 	public Set<Aluno> getAlunos() {
-		return turmas;
+		return alunos;
 	}
 	
 	public void cadastrarTurma() {
@@ -119,11 +119,11 @@ public class Turma {
 				System.out.println("Error: " + e.getMessage());
 			} 
 			finally {
-				System.out.println("Aluno cadastrado com sucesso: " + turmaCriadaComSucesso);
+				System.out.println("Turma cadastrada com sucesso: " + turmaCriadaComSucesso);
 			}
 		}
 		else {
-			System.out.println("Aluno cadastrado com sucesso: " + turmaCriadaComSucesso);
+			System.out.println("Turma cadastrada com sucesso: " + turmaCriadaComSucesso);
 		}
 	}
 	
@@ -161,11 +161,12 @@ public class Turma {
 				if (line.contains(String.valueOf(numeroRegistro))) {
 					System.out.println(line);
 					existeNome = true;
+					break;
 				}
-				else {
-					if (line != null) {
-						line = br.readLine();
-					}
+				line = br.readLine();
+				if (line == null) {
+					System.out.println("A turma pesquisada não foi encontrada em nosso sistema.");
+					existeNome = true;
 				}
 			}
 		}

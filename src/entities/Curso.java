@@ -122,11 +122,11 @@ public class Curso {
 				System.out.println("Error: " + e.getMessage());
 			} 
 			finally {
-				System.out.println("Aluno cadastrado com sucesso: " + cursoCriadoComSucesso);
+				System.out.println("Curso cadastrado com sucesso: " + cursoCriadoComSucesso);
 			}
 		}
 		else {
-			System.out.println("Aluno cadastrado com sucesso: " + cursoCriadoComSucesso);
+			System.out.println("Curso cadastrado com sucesso: " + cursoCriadoComSucesso);
 		}
 	}
 	
@@ -164,11 +164,12 @@ public class Curso {
 				if (line.contains(nome)) {
 					System.out.println(line);
 					existeNome = true;
+					break;
 				}
-				else {
-					if (line != null) {
-						line = br.readLine();
-					}
+				line = br.readLine();
+				if (line == null) {
+					System.out.println("O curso pesquisado não foi encontrado em nosso sistema.");
+					existeNome = true;
 				}
 			}
 		}

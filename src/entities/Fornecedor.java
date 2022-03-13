@@ -153,11 +153,12 @@ public class Fornecedor extends PessoaJuridica {
 				if (line.contains(razaoSocial)) {
 					System.out.println(line);
 					existeNome = true;
+					break;
 				}
-				else {
-					if (line != null) {
-						line = br.readLine();
-					}
+				line = br.readLine();
+				if (line == null) {
+					System.out.println("O fornecedor pesquisado não foi encontrado em nosso sistema.");
+					existeNome = true;
 				}
 			}
 		}

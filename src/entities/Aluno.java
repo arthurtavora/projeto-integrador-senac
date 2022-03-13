@@ -48,6 +48,18 @@ public class Aluno extends PessoaFisica {
 	public Set<Turma> getTurmas() {
 		return turmas;
 	}
+	
+	public void entrarEmTurma(Turma turma) {
+		turmas.add(turma);
+	}
+	
+	public void sairDeTurma(Turma turma) {
+		turmas.remove(turma);
+	}
+	
+	public void sairDeTodasTurmas() {
+		turmas.clear();
+	}
 
 	@Override
 	public void cadastrarPessoaFisica() {
@@ -156,11 +168,12 @@ public class Aluno extends PessoaFisica {
 				if (line.contains(nome)) {
 					System.out.println(line);
 					existeNome = true;
+					break;
 				}
-				else {
-					if (line != null) {
-						line = br.readLine();
-					}
+				line = br.readLine();
+				if (line == null) {
+					System.out.println("O aluno pesquisado não foi encontrado em nosso sistema.");
+					existeNome = true;
 				}
 			}
 		}
